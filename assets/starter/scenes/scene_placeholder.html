@@ -1,0 +1,37 @@
+<template>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../timeline.css">
+  <link rel="stylesheet" href="../vendor/katex/katex.min.css">
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+    }
+  </style>
+  <div
+    id="root"
+    data-composition-id="scene-placeholder"
+    data-width="1920"
+    data-height="1080"
+  >
+    <div class="stage">
+      <p id="card-question" class="card title">Replace this placeholder scene.</p>
+      <div id="eq-attention" class="formula" data-tex=""></div>
+    </div>
+  </div>
+  <script src="../vendor/katex/katex.min.js"></script>
+  <script src="../formula_runtime.js"></script>
+  <script>
+    window.__timelines = window.__timelines || {};
+    const root = document.getElementById("root");
+    const clipId = root.getAttribute("data-composition-id");
+    const timeline = gsap.timeline({ paused: true });
+    timeline.fromTo(
+      "#card-question",
+      { autoAlpha: 0, y: 24 },
+      { autoAlpha: 1, y: 0, duration: 0.6 },
+      0
+    );
+    window.__timelines[clipId] = timeline;
+  </script>
+</template>

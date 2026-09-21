@@ -1,0 +1,95 @@
+fps: 30
+width: 1920
+height: 1080
+duration: 180.0
+font: "PingFang SC"
+language: zh
+
+margin:
+  x: 140
+  top: 80
+  bottom: 200
+
+captions:
+  enabled: true
+  language: zho
+  layout:
+    font_size: 42
+    margin_bottom: 56
+    max_lines: 2
+    outline: 2
+
+# Schema filler only. Invent a palette for this paper; do not copy these hex values.
+colors:
+  background: "#F4F1EA"
+  text: "#1C1917"
+  primary: "#0F766E"
+  secondary: "#9A3412"
+  accent: "#A16207"
+  muted: "#57534E"
+  query: "#C2410C"
+
+clips:
+  - id: scene-01-question
+    start: 0.0
+    duration: 20.0
+    track: 1
+    file: scenes/scene_01_question.html
+    purpose: Make the viewer care about the lookup problem
+    start_visual: Empty frame, then one query and many candidates
+    end_visual: The query still unresolved among the candidates
+    evidence: "§1 opening problem"
+    transition: Candidates become the key row of the next scene
+    beats:
+      - id: card-question
+        at: 0.0
+        duration: 6.0
+        kind: card
+        job: State the opening question in one sentence
+        subtitle: "How can a query find the right information?"
+      - id: diagram-candidates
+        at: 6.0
+        duration: 10.0
+        kind: diagram
+        job: Show one query facing many keys
+        subtitle: "It compares the query with possible keys."
+      - id: hold-unresolved
+        at: 16.0
+        duration: 4.0
+        kind: hold
+        job: Rest on the unresolved query
+
+  - id: scene-03-mechanism
+    start: 83.0
+    duration: 18.0
+    track: 1
+    file: scenes/scene_03_mechanism.html
+    purpose: Show attention as weighted lookup
+    start_visual: Query vector facing a row of keys
+    end_visual: Weighted values collapse into one output
+    evidence: "Eq. 1, §3.2"
+    transition: Hold the output vector; it becomes the next scene's input
+    beats:
+      - id: diagram-keys
+        at: 0.0
+        duration: 5.0
+        kind: diagram
+        job: Introduce Q against keys
+        subtitle: "Attention is a neural-network lookup."
+      - id: eq-attention
+        at: 5.0
+        duration: 8.0
+        kind: formula
+        job: Name the lookup with symbols already visible
+        tex: "\\mathrm{Attention}(Q,K,V)=\\mathrm{softmax}(QK^{\\top}/\\sqrt{d})V"
+      - id: highlight-softmax
+        at: 9.0
+        duration: 4.0
+        kind: highlight
+        job: Light the softmax weights on the diagram
+        target: diagram-keys
+      - id: hold-output
+        at: 13.0
+        duration: 5.0
+        kind: hold
+        job: Rest on the collapsed output
