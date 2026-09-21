@@ -17,17 +17,13 @@
 
 线性注意力如何把二次方的自注意力改写成线性计算，并在因果生成时等价于 RNN。时长 3:00。
 
-<video src="media/transformers-are-rnns.mp4" controls muted playsinline width="100%"></video>
-
-[下载 MP4](media/transformers-are-rnns.mp4)
+<video src="https://github.com/user-attachments/assets/985dc794-60a1-4130-a296-fc96381a4a7f" controls muted playsinline width="100%"></video>
 
 ### Scaling Automatic Research Agents
 
 自动科研 agent 如何规模化。时长 3:15。
 
-<video src="media/scaling-automatic-research-agents.mp4" controls muted playsinline width="100%"></video>
-
-[下载 MP4](media/scaling-automatic-research-agents.mp4)
+<video src="https://github.com/user-attachments/assets/1f1fa639-776e-4ed0-ab43-52733a8c27d4" controls muted playsinline width="100%"></video>
 
 ## 它怎么工作
 

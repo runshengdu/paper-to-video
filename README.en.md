@@ -17,17 +17,13 @@ The two videos below live in `media/`. Both were generated from papers with this
 
 How linear attention rewrites quadratic self-attention as linear computation, and is equivalent to an RNN during causal generation. Runtime 3:00.
 
-<video src="media/transformers-are-rnns.mp4" controls muted playsinline width="100%"></video>
-
-[Download MP4](media/transformers-are-rnns.mp4)
+<video src="https://github.com/user-attachments/assets/985dc794-60a1-4130-a296-fc96381a4a7f" controls muted playsinline width="100%"></video>
 
 ### Scaling Automatic Research Agents
 
 How automatic research agents can scale. Runtime 3:15.
 
-<video src="media/scaling-automatic-research-agents.mp4" controls muted playsinline width="100%"></video>
-
-[Download MP4](media/scaling-automatic-research-agents.mp4)
+<video src="https://github.com/user-attachments/assets/1f1fa639-776e-4ed0-ab43-52733a8c27d4" controls muted playsinline width="100%"></video>
 
 ## How it works
 
