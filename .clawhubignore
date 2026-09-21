@@ -1,18 +1,7 @@
+
+
 # Paper-specific generated artifacts
 output/
 
 # Local HyperFrames / GSAP / KaTeX install; recreate with scripts/bootstrap_runtime.py
 runtime/
-node_modules/
-
-# Python and OS junk
-__pycache__/
-*.py[cod]
-.DS_Store
-.Python
-.venv/
-venv/
-
-# Media that only appears as paper output
-*.mp4
-*.srt
