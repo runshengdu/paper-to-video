@@ -11,8 +11,7 @@ import yaml
 
 
 REQUIRED_TIMELINE = ("fps", "width", "height", "duration", "font", "colors", "clips")
-REQUIRED_COLORS = ("background", "text", "primary", "secondary", "accent", "muted")
-EXTRA_COLOR_NAME = re.compile(r"^[A-Za-z_][\w-]*$")
+COLOR_NAME = re.compile(r"^[A-Za-z_][\w-]*$")
 RESERVED_CSS_COLOR_NAMES = frozenset(
     {
         "bg",
@@ -101,23 +100,18 @@ def validate_timeline(data: dict) -> None:
     colors = data["colors"]
     if not isinstance(colors, dict):
         raise ValueError("timeline colors must be a mapping")
-    for name in REQUIRED_COLORS:
-        if not isinstance(colors.get(name), str) or not colors[name].strip():
-            raise ValueError(f"timeline color {name} must be a non-empty string")
     for name, value in colors.items():
-        if name in REQUIRED_COLORS:
-            continue
-        if not EXTRA_COLOR_NAME.fullmatch(name):
+        if not COLOR_NAME.fullmatch(name):
             raise ValueError(
-                f"timeline extra color {name!r} must be a CSS identifier "
+                f"timeline color {name!r} must be a CSS identifier "
                 "(start with a letter or underscore; then letters, digits, hyphen, or underscore)"
             )
         if name in RESERVED_CSS_COLOR_NAMES:
             raise ValueError(
-                f"timeline extra color {name} collides with a generated CSS variable"
+                f"timeline color {name} collides with a generated CSS variable"
             )
         if not isinstance(value, str) or not value.strip():
-            raise ValueError(f"timeline extra color {name} must be a non-empty string")
+            raise ValueError(f"timeline color {name} must be a non-empty string")
     if "margin" in data and data["margin"] is not None:
         if not isinstance(data["margin"], dict):
             raise ValueError("timeline margin must be a mapping")

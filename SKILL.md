@@ -46,7 +46,7 @@ Read [references/paper-analysis.md](references/paper-analysis.md), create `paper
 
 ## Phase 2: approved analysis to approved script
 
-After explicit analysis approval, read [references/video-script.md](references/video-script.md) and the approved analysis. Create `video-script.md` by first deriving its complete subtitle narration from the analysis, then deriving the storyboard's on-screen evidence from that narration. Present both for approval and stop. That reference owns duration, public-language writing, visual handoffs, and subtitle continuity. The approved duration limit governs the timeline and final media check.
+After explicit analysis approval, read [references/video-script.md](references/video-script.md) and the approved analysis. Create `video-script.md` by first deriving its complete subtitle narration from the analysis, then deriving the storyboard's on-screen evidence from that narration. Present both for approval and stop. That reference owns duration, public-language writing, and subtitle continuity. The approved duration limit governs the timeline and final media check.
 
 ## Phase 3: approved script to full video
 
@@ -54,7 +54,7 @@ After explicit script approval:
 
 1. Read [references/clip-timeline.md](references/clip-timeline.md), [references/visual-grammar.md](references/visual-grammar.md), [references/hyperframes-workflow.md](references/hyperframes-workflow.md), and [references/quality-control.md](references/quality-control.md).
 2. Follow the timeline contract to write `timeline.yaml` from the approved script, including its caption fields when subtitles are enabled. Choose a paper-specific `colors` palette; the starter hex values are schema filler, not a house look. This non-rendering planning work does not need a runtime.
-3. Follow the runtime procedure to check the environment. If it is incomplete, report every missing component and stop until the user explicitly asks for setup help. After the font and runtime pass, generate assets and implement scenes. Keep end states, object ids, geometry, colors, and labels continuous across clips.
+3. Follow the runtime procedure to check the environment. If it is incomplete, report every missing component and stop until the user explicitly asks for setup help. After the font and runtime pass, generate assets and implement scenes.
 4. Follow the visual grammar and the mandatory quality-control review gate: snapshot-review scenes, then render and inspect a complete draft MP4 before rendering a pending video; inspect captioned frames before publish; then atomically publish. Do not omit an approved scene; if the loop reaches a blocker, report it.
 
 ## Time-addressable edits
@@ -86,5 +86,5 @@ The final MP4 must be 16:9, 1920x1080, 30 fps, within the user-approved duration
 ## Ground rules
 
 - Base factual claims on the paper. Supplemental sources may explain prerequisites but may not change or overstate the paper's conclusions. Formula TeX in the timeline may be copied from the paper even when the analysis explained the same relation in words.
-- Follow the approved technical analysis and storyboard without changing scientific claim strength. On-screen objects are the analysis's quantities, structures, and mechanisms, not a substitute protagonist from a benchmark or everyday analogy.
+- Follow the approved technical analysis and storyboard without changing scientific claim strength.
 - Use deterministic scripts for environment checks, timeline application, time resolution, and output verification. Use agent judgment for explanation design and visual review of snapshot PNGs.

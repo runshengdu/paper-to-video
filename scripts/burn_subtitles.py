@@ -84,8 +84,8 @@ def main() -> int:
     height = int(timeline["height"])
     side_margin = int((timeline.get("margin") or {}).get("x", DEFAULT_MARGIN_X))
     colors = timeline["colors"]
-    primary = hex_rgb(colors["text"])
-    outline_color = hex_rgb(colors["background"])
+    primary = hex_rgb(colors.get("text") or "")
+    outline_color = hex_rgb(colors.get("background") or "")
     color_style = ""
     if primary is not None and outline_color is not None:
         color_style = (

@@ -8,7 +8,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from timeline_lib import REQUIRED_COLORS, load_timeline
+from timeline_lib import load_timeline
 
 SKILL_ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_VENDOR_FROM = SKILL_ROOT / "runtime" / "vendor"
@@ -84,21 +84,14 @@ def write_timeline_css(output: Path, data: dict) -> None:
     frame_height = int(data["height"])
     stage_content_width = frame_width - 2 * int(margin.get("x", 140))
 
-    extra_decls = "".join(
-        f"  --{name}: {value};\n"
-        for name, value in colors.items()
-        if name not in REQUIRED_COLORS
-    )
+    color_decls = []
+    for name, value in colors.items():
+        color_decls.append(f"  --{name}: {value};\n")
+        if name == "background":
+            color_decls.append("  --bg: var(--background);\n")
     css = f"""/* Generated from timeline.yaml. Do not edit by hand. */
 :root {{
-  --background: {colors["background"]};
-  --bg: var(--background);
-  --text: {colors["text"]};
-  --primary: {colors["primary"]};
-  --secondary: {colors["secondary"]};
-  --accent: {colors["accent"]};
-  --muted: {colors["muted"]};
-{extra_decls}  --font: {json.dumps(data["font"], ensure_ascii=False)}, sans-serif;
+{"".join(color_decls)}  --font: {json.dumps(data["font"], ensure_ascii=False)}, sans-serif;
   --frame-width: {frame_width}px;
   --frame-height: {frame_height}px;
   --frame-aspect-ratio: {frame_width} / {frame_height};
