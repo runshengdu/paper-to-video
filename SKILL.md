@@ -2,7 +2,7 @@
 name: paper-to-video
 description: Turn a research paper into a silent, general-audience explainer on a declarative HyperFrames video.
 metadata:
-  version: 1.0.0
+  version: 1.0.1
   openclaw:
     requires:
       bins:
